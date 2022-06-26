@@ -1,0 +1,1 @@
+../../../CapstoneProject/CapstoneProject.uproject  /Game/Levels/Tutorial_Level -Messaging -SessionId=2BF01EEA49748CD87DC76B87FE08BDB9 -SessionOwner="shane" -SessionName="Launch On Device" -iterative

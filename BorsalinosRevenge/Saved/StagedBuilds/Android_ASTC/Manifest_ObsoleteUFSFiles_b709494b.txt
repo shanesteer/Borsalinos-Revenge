@@ -1,0 +1,2 @@
+Runtime/OpenXR/Content/Devices/ValveIndex/MRTexture.uexp
+CapstoneProject/Saved/Logs/CapstoneProject.log

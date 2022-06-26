@@ -1,0 +1,13 @@
+CapstoneProject/AssetRegistry.bin
+CapstoneProject/Content/ShaderArchive-CapstoneProject-GLSL_ES3_1_ANDROID.ushaderbytecode
+CapstoneProject/Content/ShaderArchive-Global-GLSL_ES3_1_ANDROID.ushaderbytecode
+CapstoneProject/Content/Blueprints/SignPost/SignPost_Widget.uasset
+CapstoneProject/Content/Blueprints/SignPost/SignPost_Widget.uexp
+CapstoneProject/Content/Levels/Tutorial_Level.uexp
+CapstoneProject/Content/Levels/Tutorial_Level.umap
+CapstoneProject/Content/Levels/Tutorial_Level_BuiltData.uasset
+CapstoneProject/Content/Levels/Tutorial_Level_BuiltData.ubulk
+CapstoneProject/Content/Levels/Tutorial_Level_BuiltData.uexp
+Engine/GlobalShaderCache-GLSL_ES3_1_ANDROID.bin
+Manifest_NonUFSFiles_Android.txt
+Manifest_UFSFiles_Android.txt

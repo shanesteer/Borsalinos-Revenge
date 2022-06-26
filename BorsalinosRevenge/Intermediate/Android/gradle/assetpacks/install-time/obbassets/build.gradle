@@ -1,0 +1,9 @@
+apply plugin: 'com.android.asset-pack'
+
+assetPack {
+	packName = "obbassets"
+	dynamicDelivery {
+		deliveryType = "install-time"
+		instantDeliveryType = "install-time"
+	}
+}

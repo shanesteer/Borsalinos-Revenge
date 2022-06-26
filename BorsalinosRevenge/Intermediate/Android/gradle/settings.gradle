@@ -1,0 +1,50 @@
+rootProject.name='app'
+include ':app'
+include ':downloader_library'
+include ':permission_library'
+// generate mainobb assetpack
+if (OBB_FILECOUNT.toInteger() > 0) {
+	File obbfile = new File(OBB_FILE0)
+	if (obbfile.exists()) {
+		println 'Creating install-time assetpack for GooglePAD: assetpacks/install-time/obbassets'
+		file("assetpacks/install-time/obbassets/src/main/assets").mkdirs()
+		def assetBuildGradle = """apply plugin: 'com.android.asset-pack'
+
+assetPack {
+	packName = "obbassets"
+	dynamicDelivery {
+		deliveryType = "install-time"
+		instantDeliveryType = "install-time"
+	}
+}"""
+		def assetBuildGradleFile = new File("assetpacks/install-time/obbassets/build.gradle")
+		assetBuildGradleFile.write(assetBuildGradle)
+
+		def destobbfile = new File("assetpacks/install-time/obbassets/src/main/assets/main.obb.png")
+		if (destobbfile.exists()) {
+			destobbfile.delete()
+		}
+		def srcobbStream = obbfile.newDataInputStream()
+		def dstobbStream = destobbfile.newDataOutputStream()
+		dstobbStream << srcobbStream
+		srcobbStream.close()
+		dstobbStream.close()
+	}
+}
+
+// add the assetpacks
+def assetpacksDir = new File("assetpacks/install-time")
+if (assetpacksDir.exists()) assetpacksDir.eachDir {
+	println ':assetpacks:install-time:' + it.name
+	include ':assetpacks:install-time:' + it.name
+}
+assetpacksDir = new File("assetpacks/fast-follow")
+if (assetpacksDir.exists()) assetpacksDir.eachDir {
+	println ':assetpacks:fast-follow:' + it.name
+	include ':assetpacks:fast-follow:' + it.name
+}
+assetpacksDir = new File("assetpacks/on-demand")
+if (assetpacksDir.exists()) assetpacksDir.eachDir {
+	println ':assetpacks:on-demand:' + it.name
+	include ':assetpacks:on-demand:' + it.name
+}
